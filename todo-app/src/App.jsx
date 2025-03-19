@@ -6,7 +6,7 @@ import TodoCreate from './components/TodoCreate'
 import TodoList from './components/TodoList'
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] =useState(localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : []);
   const createTodo = (newTodo) => {
     setTodos([...todos, newTodo]);
   }
